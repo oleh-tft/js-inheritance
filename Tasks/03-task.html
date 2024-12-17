@@ -38,7 +38,7 @@
 
             loadCargo(weight) {
                 if (weight > this.maxCargo) {
-                    console.log("Этот грузовик не может перевозить более 1000кг груза");
+                    console.log(`Этот грузовик не может перевозить более ${this.maxCargo}кг груза`);
                 }
                 else {
                     this.weight = weight;
@@ -50,7 +50,7 @@
         let v1 = new Car("Mazda");
         v1.move();
 
-        let v2 = new Truck("TruckModel");
+        let v2 = new Truck("TruckModel", 1000);
         v2.loadCargo(1500);
         v2.move();
     </script>
