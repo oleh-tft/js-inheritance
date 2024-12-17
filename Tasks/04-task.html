@@ -91,6 +91,15 @@
             }
         }
 
+        class ProductWithDiscount extends Product {
+            discount;
+
+            constructor(imageaPath, price, discount) {
+                super(imageaPath, price);
+                this.discount = discount;
+            }
+        }
+
         class Catalog {
             items = [];
             element;
@@ -100,6 +109,10 @@
             }
 
             add(item) {
+                if (!(item instanceof CatalogItem)) {
+                    alert("Данный метод принимает только классы производные от CatalogItem");
+                    return;
+                }
                 this.items.push(item);
             }
 
